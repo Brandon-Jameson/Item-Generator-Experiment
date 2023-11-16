@@ -1,7 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 using TMPro;
 
 public class ItemGenerator : MonoBehaviour
@@ -38,6 +38,4 @@ public class ItemGenerator : MonoBehaviour
         material = matGen.GetMaterial();
         rarity = rarGen.GetRarity();        
     }
-
-    
 }

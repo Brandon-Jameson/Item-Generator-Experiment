@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,9 @@ public class RarityGenerator : MonoBehaviour
         get { return color; }
     }
     private float[] rarityThreshold;
+
+    private const string rarityError0 = "No Rarity Found";
+    private const string rarityError1 = "Rarity {0} not found in dictionary";
 
     void Start()
     {
@@ -39,14 +43,14 @@ public class RarityGenerator : MonoBehaviour
     {
         if (rarityList.Count > 0)
         {
-            int index = GetRarityValue();
+            int index = GetRarityIndex();
             rarity = rarityList[index];
             color = GetHexColor(rarity);
             return rarity;
         }
         else
         {
-            Debug.Log("No Rarity Found");
+            Debug.LogError(String.Format("{0}", rarityError0));
             return null;
         }
     }
@@ -59,14 +63,14 @@ public class RarityGenerator : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"Rarity {rarity} not found in dictionary");
+            Debug.LogError(String.Format(rarityError1, rarity));
             return "#000000";
         }
     }
 
-    int GetRarityValue()
+    int GetRarityIndex()
     {
-        float randomValue = Random.value;
+        float randomValue = UnityEngine.Random.value;
         int selectedRarityIndex = 0;
         for (int i = 0; i < rarityThreshold.Length; i++)
         {

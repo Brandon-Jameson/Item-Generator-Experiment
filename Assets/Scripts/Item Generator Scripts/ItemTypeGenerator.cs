@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class ItemTypeGenerator : MonoBehaviour
 {
     [SerializeField] private List<string> itemTypeList;
+
+    private const string itemTypeError0 = "No ItemTypeFound";
 
     public string GetItemType()
     {
@@ -15,13 +18,13 @@ public class ItemTypeGenerator : MonoBehaviour
     {
         if (itemTypeList.Count > 0)
         {
-            int index = Random.Range(0, itemTypeList.Count);
+            int index = UnityEngine.Random.Range(0, itemTypeList.Count);
             string item = itemTypeList[index];
             return item;
         }
         else
         {
-            Debug.Log("No ItemType Found!");
+            Debug.LogError(String.Format("{0}", itemTypeError0));
             return null;
         }
     }

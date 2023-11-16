@@ -1,8 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,7 +13,6 @@ public class UIManager : MonoBehaviour
     }
     private TMP_Text logText;
     private RarityGenerator rarGen;
-    private const string noItemStr = "No Item found";
     private List<string> log;
     private TMP_Text log1;
     private TMP_Text log2;
@@ -24,6 +23,9 @@ public class UIManager : MonoBehaviour
     private int currentIndex = 0;
     private GameObject logPanel;
     [SerializeField] private GameObject logTextPrefab;
+
+    private const string uiError0 = "No Item found";
+    private const string uiError1 = "Invalid hex color code: ";
 
     void Start()
     {
@@ -36,7 +38,7 @@ public class UIManager : MonoBehaviour
         log4 = GameObject.Find("Log4").GetComponent<TMP_Text>();
         log5 = GameObject.Find("Log5").GetComponent<TMP_Text>();
         logBuffer = new TMP_Text[]{ log1, log2, log3, log4, log5 };
-        itemText.text = String.Format("{0}", noItemStr);
+        itemText.text = String.Format("{0}", uiError0);
     }
 
     public void SetTextColor(string rarity, TMP_Text text)
@@ -49,7 +51,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Invalid hex color code: " + hexColor);
+            Debug.LogError(String.Format("{0} {1}", uiError1, hexColor));
         }
     }
 
