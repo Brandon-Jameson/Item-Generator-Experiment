@@ -16,6 +16,7 @@ public class RarityGenerator : MonoBehaviour
     {
         get { return color; }
     }
+    private float[] rarityThreshold;
 
     void Start()
     {
@@ -25,6 +26,8 @@ public class RarityGenerator : MonoBehaviour
         rarityColorDictionary.Add("Epic", "#B300FF");  // Purple
         rarityColorDictionary.Add("Legendary", "#FFBD00");  // Gold
         rarityColorDictionary.Add("Mythic", "#FF0000");  // Red
+
+        rarityThreshold = new float[]{ 0.55f, 0.27f, 0.11f, 0.05f, 0.014f, 0.006f };
     }
 
     public string GetRarity()
@@ -36,7 +39,7 @@ public class RarityGenerator : MonoBehaviour
     {
         if (rarityList.Count > 0)
         {
-            int index = Random.Range(0, rarityList.Count);
+            int index = GetRarityValue();
             rarity = rarityList[index];
             color = GetHexColor(rarity);
             return rarity;
@@ -59,5 +62,20 @@ public class RarityGenerator : MonoBehaviour
             Debug.LogError($"Rarity {rarity} not found in dictionary");
             return "#000000";
         }
+    }
+
+    int GetRarityValue()
+    {
+        float randomValue = Random.value;
+        int selectedRarityIndex = 0;
+        for (int i = 0; i < rarityThreshold.Length; i++)
+        {
+            if (randomValue >= rarityThreshold[i])
+            {
+                selectedRarityIndex = i;
+                break;
+            }
+        }
+        return selectedRarityIndex;
     }
 }
