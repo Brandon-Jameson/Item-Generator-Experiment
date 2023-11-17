@@ -41,9 +41,9 @@ public class UIManager : MonoBehaviour
         itemText.text = String.Format("{0}", uiError0);
     }
 
-    public void SetTextColor(string rarity, TMP_Text text)
+    public void SetTextColor(string rarColor, TMP_Text text)
     {
-        string hexColor = rarGen.Color;
+        string hexColor = rarColor;
         Color color;
         if (ColorUtility.TryParseHtmlString(hexColor, out color))
         {

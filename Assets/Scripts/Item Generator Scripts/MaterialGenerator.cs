@@ -6,6 +6,7 @@ using UnityEngine;
 public class MaterialGenerator : MonoBehaviour
 {
     private List<ItemMaterial> materialList = new List<ItemMaterial>();
+    private float[] materialWeight;
 
     private const string materialError0 = "Material List is empty";
     private const string materialError1 = "Material is null";
@@ -41,6 +42,8 @@ public class MaterialGenerator : MonoBehaviour
         materialList.Add(valeriumMaterial);
         materialList.Add(phariumMaterial);
         materialList.Add(maleveriumMaterial);
+
+        materialWeight = new float[]{ 0.3f, 0.24f, 0.18f, 0.11f, 0.08f, 0.05f, 0.03f, 0.01f };
     }
 
     public string GetMaterial()
@@ -52,7 +55,7 @@ public class MaterialGenerator : MonoBehaviour
     {
         if (materialList.Count > 0)
         {
-            int index = UnityEngine.Random.Range(0, materialList.Count);
+            int index = GetMaterialIndex();
             ItemMaterial material = materialList[index];
             if (material != null)
             {
@@ -70,5 +73,20 @@ public class MaterialGenerator : MonoBehaviour
             Debug.LogError(String.Format("{0}", materialError0));
             return null;
         }
+    }
+
+    int GetMaterialIndex()
+    {
+        float randomValue = UnityEngine.Random.value;
+        int selectedMaterialIndex = 0;
+        for (int i = 0; i < materialWeight.Length; i++)
+        {
+            if (randomValue >= materialWeight[i])
+            {
+                selectedMaterialIndex = i;
+                break;
+            }
+        }
+        return selectedMaterialIndex;
     }
 }
