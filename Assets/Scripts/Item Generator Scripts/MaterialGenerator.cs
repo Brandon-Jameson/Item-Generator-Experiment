@@ -18,22 +18,14 @@ public class MaterialGenerator : MonoBehaviour
 
     void InstanceMaterials()
     {
-        CopperMaterial copperMaterial = new GameObject("CopperObject").
-                                        AddComponent<CopperMaterial>();
-        IronMaterial ironMaterial = new GameObject("IronObject").
-                                    AddComponent<IronMaterial>();
-        SteelMaterial steelMaterial = new GameObject("SteelObject").
-                                      AddComponent<SteelMaterial>();
-        InvarMaterial invarMaterial = new GameObject("InvarObject").
-                                      AddComponent<InvarMaterial>();
-        HighAlloyMaterial highAlloyMaterial = new GameObject("HighAlloyObject").
-                                              AddComponent<HighAlloyMaterial>();
-        ValeriumMaterial valeriumMaterial = new GameObject("ValeriumObject").
-                                            AddComponent<ValeriumMaterial>();
-        PhariumMaterial phariumMaterial = new GameObject("PhariumObject").
-                                          AddComponent<PhariumMaterial>();
-        MaleveriumMaterial maleveriumMaterial = new GameObject("MaleveriumObject").
-                                                AddComponent<MaleveriumMaterial>();
+        CopperMaterial copperMaterial = ScriptableObject.CreateInstance<CopperMaterial>();
+        IronMaterial ironMaterial = ScriptableObject.CreateInstance<IronMaterial>();
+        SteelMaterial steelMaterial = ScriptableObject.CreateInstance<SteelMaterial>();
+        InvarMaterial invarMaterial = ScriptableObject.CreateInstance<InvarMaterial>();
+        HighAlloyMaterial highAlloyMaterial = ScriptableObject.CreateInstance<HighAlloyMaterial>();
+        ValeriumMaterial valeriumMaterial = ScriptableObject.CreateInstance<ValeriumMaterial>();
+        PhariumMaterial phariumMaterial = ScriptableObject.CreateInstance<PhariumMaterial>();
+        MaleveriumMaterial maleveriumMaterial = ScriptableObject.CreateInstance<MaleveriumMaterial>();
         materialList.Add(copperMaterial);
         materialList.Add(ironMaterial);
         materialList.Add(steelMaterial);
@@ -43,7 +35,7 @@ public class MaterialGenerator : MonoBehaviour
         materialList.Add(phariumMaterial);
         materialList.Add(maleveriumMaterial);
 
-        materialWeight = new float[]{ 0.3f, 0.24f, 0.18f, 0.11f, 0.08f, 0.05f, 0.03f, 0.01f };
+        materialWeight = new float[]{ 0f, 0.39f, 0.23f, 0.12f, 0.11f, 0.08f, 0.05f, 0.02f };
     }
 
     public string GetMaterial()
@@ -64,13 +56,13 @@ public class MaterialGenerator : MonoBehaviour
             }
             else
             {
-                Debug.LogError(String.Format("{0}", materialError1));
-            return null;
+                Debug.LogError(String.Format($"{materialError1}"));
+                return null;
             }
         }
         else
         {
-            Debug.LogError(String.Format("{0}", materialError0));
+            Debug.LogError(String.Format($"{materialError0}"));
             return null;
         }
     }
@@ -78,7 +70,7 @@ public class MaterialGenerator : MonoBehaviour
     int GetMaterialIndex()
     {
         float randomValue = UnityEngine.Random.value;
-        int selectedMaterialIndex = 0;
+        int selectedMaterialIndex = 1;
         for (int i = 0; i < materialWeight.Length; i++)
         {
             if (randomValue >= materialWeight[i])

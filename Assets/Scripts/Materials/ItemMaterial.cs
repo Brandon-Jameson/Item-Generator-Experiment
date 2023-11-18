@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ItemMaterial : MonoBehaviour
+public class ItemMaterial : ScriptableObject
 {
-    public abstract string MaterialName
+    public virtual string MaterialName
     {
-        get;
+        get { return "Empty"; }
     }
-    public abstract int MaterialDamageRange
+    public virtual int MaterialDamageRange
     {
-        get;
+        get { return 0; }
     }
 }

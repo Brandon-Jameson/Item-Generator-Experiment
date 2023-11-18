@@ -28,7 +28,7 @@ public class ItemGenerator : MonoBehaviour
         UI.AddItemToLog(itemOutput);
         AssignVariables();
         UI.SetTextColor(rarGen.Color, UI.ItemText);
-        itemOutput = String.Format("{0} {1} {2}", rarity, material, itemType);
+        itemOutput = String.Format($"{rarity} {material} {itemType}");
         UI.UpdateText(itemOutput);
     }
 
