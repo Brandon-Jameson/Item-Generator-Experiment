@@ -6,12 +6,14 @@ using TMPro;
 
 public class ItemGenerator : MonoBehaviour
 {
-    private string rarity;
-    private string material;
-    private string itemType;
+    private string rarityStr;
+    private string materialStr;
+    private string itemTypeStr;
     private MaterialGenerator matGen;
     private RarityGenerator rarGen;
     private ItemTypeGenerator itmTypGen;
+    private ItemMaterial material;
+    private ItemType itemType;
     private UIManager UI;
     private string itemOutput;
 
@@ -28,7 +30,7 @@ public class ItemGenerator : MonoBehaviour
         UI.AddItemToLog(itemOutput);
         AssignVariables();
         UI.SetTextColor(rarGen.Color, UI.ItemText);
-        itemOutput = String.Format("{0} {1} {2}", rarity, material, itemType);
+        itemOutput = String.Format($"{rarityStr} {materialStr} {itemTypeStr}");
         UI.UpdateText(itemOutput);
     }
 
@@ -36,6 +38,8 @@ public class ItemGenerator : MonoBehaviour
     {
         itemType = itmTypGen.GetItemType();
         material = matGen.GetMaterial();
-        rarity = rarGen.GetRarity();        
+        itemTypeStr = itmTypGen.Item.ItemTypeName;
+        materialStr = matGen.Material.MaterialName;
+        rarityStr = rarGen.GetRarity();        
     }
 }

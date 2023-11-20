@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ItemMaterial : MonoBehaviour
+[CreateAssetMenu(fileName = "NewItemMaterial", menuName = "ItemMaterials/New ItemMaterial")]
+public class ItemMaterial : ScriptableObject
 {
-    public abstract string MaterialName
+    [SerializeField] private string materialName;
+    public virtual string MaterialName
     {
-        get;
+        get { return materialName; }
+        set { materialName = value; }
     }
-    public abstract int MaterialDamageRange
+    [SerializeField] private int materialDamageRange;
+    public virtual int MaterialDamageRange
     {
-        get;
+        get { return materialDamageRange; }
+        set { materialDamageRange = value; }
     }
 }
