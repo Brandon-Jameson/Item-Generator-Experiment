@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43e8a04fc67f464ab153c79e930eeaa, type: 3}
+  m_Name: ShieldArmour
+  m_EditorClassIdentifier: 
+  itemTypeName: Shield
+  itemTypeWeight: 16
+  itemTypeValue: 100
+  itemTypeProtection: 8
+  itemTypeDamage: 0

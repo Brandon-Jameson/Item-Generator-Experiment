@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RarityGenerator : MonoBehaviour
 {
-    private Dictionary<string, string> rarityColorDictionary = new Dictionary<string, string>();
+    private Dictionary<string, string> rarityColorDictionary;
     [SerializeField] private List<string> rarityList;
     private string rarity;
     public string Rarity
@@ -24,6 +24,7 @@ public class RarityGenerator : MonoBehaviour
 
     void Start()
     {
+        rarityColorDictionary = new Dictionary<string, string>();
         rarityColorDictionary.Add("Common", "#C8C8C8");  // White
         rarityColorDictionary.Add("Uncommon", "#00FF00");  // Green
         rarityColorDictionary.Add("Rare", "#0078FF");  // Blue

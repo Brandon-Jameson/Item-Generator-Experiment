@@ -5,22 +5,47 @@ using UnityEngine;
 
 public class ItemTypeGenerator : MonoBehaviour
 {
-    [SerializeField] private List<string> itemTypeList;
+    private ItemType[] itemTypeList;
+    private ItemType item;
+    public ItemType Item
+    {
+        get { return item; }
+    }
 
     private const string itemTypeError0 = "No ItemTypeFound";
+    private const string itemTypeError1 = "ItemType is null!";
 
-    public string GetItemType()
+    void Start()
+    {
+        InstanceItemTypes();
+    }
+
+    void InstanceItemTypes()
+    {
+        itemTypeList = Resources.LoadAll<ItemType>("ItemTypes");
+    }
+
+    public ItemType GetItemType()
     {
        return GenerateItemType();
     }
 
-    string GenerateItemType()
+    ItemType GenerateItemType()
     {
-        if (itemTypeList.Count > 0)
+        if (itemTypeList.Length > 0)
         {
-            int index = UnityEngine.Random.Range(0, itemTypeList.Count);
-            string item = itemTypeList[index];
-            return item;
+            int index = UnityEngine.Random.Range(0, itemTypeList.Length);
+            item = itemTypeList[index];
+
+            if (item != null)
+            {
+                return item;
+            }
+            else
+            {
+                Debug.LogError(String.Format($"{itemTypeError1}"));
+                return null;
+            }
         }
         else
         {

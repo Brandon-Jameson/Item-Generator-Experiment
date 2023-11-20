@@ -182,14 +182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59706cc40ee90847abe1784221e78da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemTypeList:
-  - Sword
-  - Axe
-  - Hammer
-  - Dagger
-  - Greatsword
-  - Battleaxe
-  - Warhammer
 --- !u!114 &134151566
 MonoBehaviour:
   m_ObjectHideFlags: 0
