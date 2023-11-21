@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: IronMaterial
   m_EditorClassIdentifier: 
   materialName: Iron
-  materialDamageRange: 6
+  materialDamage: 22
+  materialValue: 20

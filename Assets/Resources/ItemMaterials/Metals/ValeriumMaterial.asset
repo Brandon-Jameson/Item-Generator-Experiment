@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: ValeriumMaterial
   m_EditorClassIdentifier: 
   materialName: Valerium
-  materialDamageRange: 12
+  materialDamage: 40
+  materialValue: 40

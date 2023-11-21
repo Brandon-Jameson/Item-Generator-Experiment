@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: SteelMaterial
   m_EditorClassIdentifier: 
   materialName: Steel
-  materialDamageRange: 7
+  materialDamage: 31
+  materialValue: 30

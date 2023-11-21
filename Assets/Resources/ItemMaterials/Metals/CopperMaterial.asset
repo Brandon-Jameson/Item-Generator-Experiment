@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: CopperMaterial
   m_EditorClassIdentifier: 
   materialName: Copper
-  materialDamageRange: 4
+  materialDamage: 22
+  materialValue: 20

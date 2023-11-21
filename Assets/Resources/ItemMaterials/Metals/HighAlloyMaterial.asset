@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: HighAlloyMaterial
   m_EditorClassIdentifier: 
   materialName: High-Alloy
-  materialDamageRange: 10
+  materialDamage: 40
+  materialValue: 40

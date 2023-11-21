@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: GreatswordWeapon
   m_EditorClassIdentifier: 
   itemTypeName: Greatsword
-  itemTypeWeight: 0
+  itemTypeWeight: 16
   itemTypeValue: 0
-  itemTypeProtection: 0
-  itemTypeDamage: 0
+  baseMaterialCost: 6

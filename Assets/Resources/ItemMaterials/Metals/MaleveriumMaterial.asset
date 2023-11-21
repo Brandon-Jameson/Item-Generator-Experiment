@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: MaleveriumMaterial
   m_EditorClassIdentifier: 
   materialName: Maleverium
-  materialDamageRange: 15
+  materialDamage: 60
+  materialValue: 60

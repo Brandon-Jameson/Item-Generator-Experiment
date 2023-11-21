@@ -13,6 +13,11 @@ public class ItemGenerator : MonoBehaviour
     private RarityGenerator rarGen;
     private ItemTypeGenerator itmTypGen;
     private ItemMaterial material;
+    public ItemMaterial Material
+    {
+        get { return material; }
+        set { material = value; }
+    }
     private ItemType itemType;
     private UIManager UI;
     private string itemOutput;
@@ -36,10 +41,10 @@ public class ItemGenerator : MonoBehaviour
 
     void AssignVariables()
     {
-        itemType = itmTypGen.GetItemType();
         material = matGen.GetMaterial();
-        itemTypeStr = itmTypGen.Item.ItemTypeName;
+        itemType = itmTypGen.GetItemType(material);
         materialStr = matGen.Material.MaterialName;
+        itemTypeStr = itmTypGen.Item.ItemTypeName;
         rarityStr = rarGen.GetRarity();        
     }
 }

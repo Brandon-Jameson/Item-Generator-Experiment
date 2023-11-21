@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: SwordWeapon
   m_EditorClassIdentifier: 
   itemTypeName: Sword
-  itemTypeWeight: 0
-  itemTypeValue: 0
-  itemTypeProtection: 0
-  itemTypeDamage: 0
+  itemTypeWeight: 6
+  itemTypeValue: 80
+  baseMaterialCost: 4

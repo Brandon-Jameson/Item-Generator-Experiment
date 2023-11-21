@@ -23,6 +23,10 @@ public class UIManager : MonoBehaviour
     private int currentIndex = 0;
     private GameObject logPanel;
     [SerializeField] private GameObject logTextPrefab;
+    private TMP_Text damageText;
+    private TMP_Text armourText;
+    private TMP_Text weightText;
+    private TMP_Text valueText;
 
     private const string uiError0 = "No Item found";
     private const string uiError1 = "Invalid hex color code: ";
@@ -37,6 +41,10 @@ public class UIManager : MonoBehaviour
         log3 = GameObject.Find("Log3").GetComponent<TMP_Text>();
         log4 = GameObject.Find("Log4").GetComponent<TMP_Text>();
         log5 = GameObject.Find("Log5").GetComponent<TMP_Text>();
+        damageText = GameObject.Find("DamageText").GetComponent<TMP_Text>();
+        armourText = GameObject.Find("ArmourText").GetComponent<TMP_Text>();
+        weightText = GameObject.Find("WeightText").GetComponent<TMP_Text>();
+        valueText = GameObject.Find("ValueText").GetComponent<TMP_Text>();
         logBuffer = new TMP_Text[]{ log1, log2, log3, log4, log5 };
         itemText.text = String.Format("{0}", uiError0);
     }

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: PhariumMaterial
   m_EditorClassIdentifier: 
   materialName: Pharium
-  materialDamageRange: 13
+  materialDamage: 50
+  materialValue: 50

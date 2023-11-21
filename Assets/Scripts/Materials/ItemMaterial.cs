@@ -6,15 +6,20 @@ using UnityEngine;
 public class ItemMaterial : ScriptableObject
 {
     [SerializeField] private string materialName;
-    public virtual string MaterialName
+    public virtual string MaterialName 
     {
         get { return materialName; }
-        set { materialName = value; }
     }
-    [SerializeField] private int materialDamageRange;
-    public virtual int MaterialDamageRange
+    [SerializeField] private int materialDamage;
+    public virtual int MaterialDamage
     {
-        get { return materialDamageRange; }
-        set { materialDamageRange = value; }
+        get { return materialDamage; }
+        set { materialDamage = value; }
+    }
+    [SerializeField] private float materialValue;
+    public virtual float MaterialValue
+    {
+        get { return materialValue; }
+        set { materialValue = value; }
     }
 }

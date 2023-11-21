@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: HandArmour
   m_EditorClassIdentifier: 
   itemTypeName: Gauntlets
-  itemTypeWeight: 8
-  itemTypeValue: 50
-  itemTypeProtection: 4
-  itemTypeDamage: 0
+  itemTypeWeight: 3
+  itemTypeValue: 0
+  baseMaterialCost: 2

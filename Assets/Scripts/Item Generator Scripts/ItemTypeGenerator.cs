@@ -11,12 +11,14 @@ public class ItemTypeGenerator : MonoBehaviour
     {
         get { return item; }
     }
+    private ItemGenerator itemGenerator;
 
     private const string itemTypeError0 = "No ItemTypeFound";
     private const string itemTypeError1 = "ItemType is null!";
 
     void Start()
     {
+        itemGenerator = GetComponent<ItemGenerator>();
         InstanceItemTypes();
     }
 
@@ -25,12 +27,12 @@ public class ItemTypeGenerator : MonoBehaviour
         itemTypeList = Resources.LoadAll<ItemType>("ItemTypes");
     }
 
-    public ItemType GetItemType()
+    public ItemType GetItemType(ItemMaterial material)
     {
-       return GenerateItemType();
+       return GenerateItemType(material);
     }
 
-    ItemType GenerateItemType()
+    ItemType GenerateItemType(ItemMaterial material)
     {
         if (itemTypeList.Length > 0)
         {
@@ -39,6 +41,10 @@ public class ItemTypeGenerator : MonoBehaviour
 
             if (item != null)
             {
+                item.BaseMaterial = material;
+                UpdateItemValues();
+                Debug.Log("Damage: " + item.ItemTypeDamage + "\n" + 
+                          "Value: " + item.ItemTypeValue);
                 return item;
             }
             else
@@ -52,5 +58,11 @@ public class ItemTypeGenerator : MonoBehaviour
             Debug.LogError(String.Format("{0}", itemTypeError0));
             return null;
         }
+    }
+
+    void UpdateItemValues()
+    {
+        item.ItemTypeDamage = item.CalculateTotalDamage();
+        item.ItemTypeValue = item.CalculateValue();
     }
 }

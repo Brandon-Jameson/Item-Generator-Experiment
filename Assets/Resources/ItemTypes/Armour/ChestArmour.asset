@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTypeName: Chestplate
   itemTypeWeight: 30
-  itemTypeValue: 200
-  itemTypeProtection: 15
-  itemTypeDamage: 0
+  itemTypeValue: 240
+  baseMaterialCost: 8

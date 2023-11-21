@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,33 +7,65 @@ using UnityEngine;
 public class ItemType : ScriptableObject
 {
     [SerializeField] private string itemTypeName;
-    public virtual string ItemTypeName
+    public virtual string ItemTypeName 
     {
         get { return itemTypeName; }
-        set { itemTypeName = value; }
     }
     [SerializeField] private float itemTypeWeight;
-    public virtual float ItemTypeWeight
+    public virtual float ItemTypeWeight 
     {
         get { return itemTypeWeight; }
         set { itemTypeWeight = value; }
     }
     [SerializeField] private float itemTypeValue;
-    public virtual float ItemTypeValue
+    public virtual float ItemTypeValue 
     {
         get { return itemTypeValue; }
         set { itemTypeValue = value; }
     }
-    [SerializeField] private float itemTypeProtection;
-    public virtual float ItemTypeProtection
+    [SerializeField] private int baseMaterialCost;
+    public virtual float BaseMaterialCost 
     {
-        get { return itemTypeProtection; }
-        set { itemTypeProtection = value; }
+        get { return baseMaterialCost; }
     }
-    [SerializeField] private float itemTypeDamage;
-    public virtual float ItemTypeDamage
+    private int itemTypeDamage;
+    public int ItemTypeDamage
     {
         get { return itemTypeDamage; }
-        set { itemTypeDamage = value;}
+        set { itemTypeDamage = value; }
+    }
+    private ItemMaterial baseMaterial;
+    public ItemMaterial BaseMaterial
+    {
+        get { return baseMaterial; }
+        set { baseMaterial = value; }
+    }
+
+    private const string itemTypeError0 = "BaseMaterial is not set in ItemType.";
+
+    public int CalculateTotalDamage()
+    {
+        if (baseMaterial != null)
+        {
+            return baseMaterial.MaterialDamage * baseMaterialCost;
+        }
+        else
+        {
+            Debug.LogError(String.Format($"{itemTypeError0}"));
+            return 0;
+        }
+    }
+
+    public float CalculateValue()
+    {
+        if (baseMaterial != null)
+        {
+            return baseMaterial.MaterialValue * baseMaterialCost; 
+        }
+        else
+        {
+            Debug.LogError(String.Format($"{itemTypeError0}"));
+            return 0f;
+        }
     }
 }
