@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78c38a07ca0f72f47aa4ba3f3cf504fd, type: 3}
-  m_Name: CopperMaterial
+  m_Name: Material_Metal13
   m_EditorClassIdentifier: 
-  materialName: Copper
-  materialDamageRange: 4
+  materialName: Lanalite
+  materialDamage: 31
+  materialArmour: 18
+  materialWeight: 2
+  materialValue: 30

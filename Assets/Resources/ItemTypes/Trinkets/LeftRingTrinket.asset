@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: LeftRingTrinket
   m_EditorClassIdentifier: 
   itemTypeName: Left Ring
-  itemTypeWeight: 0.5
-  itemTypeValue: 30
-  itemTypeProtection: 0
-  itemTypeDamage: 0
+  itemClass: Trinket
+  baseMaterialCost: 3

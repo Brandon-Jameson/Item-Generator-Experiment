@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DaggerWeapon
   m_EditorClassIdentifier: 
   itemTypeName: Dagger
-  itemTypeWeight: 0
-  itemTypeValue: 0
-  itemTypeProtection: 0
-  itemTypeDamage: 0
+  itemClass: Weapon
+  itemTypeWeight: 2
+  itemTypeValue: 96
+  baseMaterialCost: 2

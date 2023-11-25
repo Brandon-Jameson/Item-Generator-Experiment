@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HeadArmour
   m_EditorClassIdentifier: 
   itemTypeName: Helmet
-  itemTypeWeight: 12
-  itemTypeValue: 80
-  itemTypeProtection: 6
-  itemTypeDamage: 0
+  itemClass: Armour
+  itemTypeWeight: 6
+  itemTypeValue: 160
+  baseMaterialCost: 4

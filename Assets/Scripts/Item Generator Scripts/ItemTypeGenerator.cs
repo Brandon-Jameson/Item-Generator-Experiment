@@ -25,20 +25,15 @@ public class ItemTypeGenerator : MonoBehaviour
         itemTypeList = Resources.LoadAll<ItemType>("ItemTypes");
     }
 
-    public ItemType GetItemType()
-    {
-       return GenerateItemType();
-    }
-
-    ItemType GenerateItemType()
+    public ItemType GenerateItemType(ItemMaterial material)
     {
         if (itemTypeList.Length > 0)
         {
             int index = UnityEngine.Random.Range(0, itemTypeList.Length);
             item = itemTypeList[index];
-
             if (item != null)
             {
+                item.BaseMaterial = material;
                 return item;
             }
             else
@@ -49,7 +44,7 @@ public class ItemTypeGenerator : MonoBehaviour
         }
         else
         {
-            Debug.LogError(String.Format("{0}", itemTypeError0));
+            Debug.LogError(String.Format($"{itemTypeError0}"));
             return null;
         }
     }

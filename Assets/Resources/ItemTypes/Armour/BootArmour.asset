@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BootArmour
   m_EditorClassIdentifier: 
   itemTypeName: Boots
-  itemTypeWeight: 10
-  itemTypeValue: 50
-  itemTypeProtection: 5
-  itemTypeDamage: 0
+  itemClass: Armour
+  itemTypeWeight: 3
+  itemTypeValue: 96
+  baseMaterialCost: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShieldArmour
   m_EditorClassIdentifier: 
   itemTypeName: Shield
-  itemTypeWeight: 16
-  itemTypeValue: 100
-  itemTypeProtection: 8
-  itemTypeDamage: 0
+  itemClass: Armour
+  itemTypeWeight: 12
+  itemTypeValue: 240
+  baseMaterialCost: 6

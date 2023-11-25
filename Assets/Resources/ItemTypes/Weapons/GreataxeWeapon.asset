@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GreataxeWeapon
   m_EditorClassIdentifier: 
   itemTypeName: Greataxe
-  itemTypeWeight: 0
-  itemTypeValue: 0
-  itemTypeProtection: 0
-  itemTypeDamage: 0
+  itemClass: Weapon
+  itemTypeWeight: 18
+  itemTypeValue: 288
+  baseMaterialCost: 6

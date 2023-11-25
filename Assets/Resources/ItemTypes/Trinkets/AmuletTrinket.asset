@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: AmuletTrinket
   m_EditorClassIdentifier: 
   itemTypeName: Amulet
-  itemTypeWeight: 0.5
-  itemTypeValue: 40
-  itemTypeProtection: 0
-  itemTypeDamage: 0
+  itemClass: Trinket
+  baseMaterialCost: 3
