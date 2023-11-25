@@ -6,17 +6,9 @@ using UnityEngine;
 public class RarityGenerator : MonoBehaviour
 {
     private Dictionary<string, string> rarityColorDictionary;
-    [SerializeField] private List<string> rarityList;
-    private string rarity;
-    public string Rarity
-    {
-        get { return rarity; }
-    }
+    private ItemRarity[] rarityList;
+    private ItemRarity rarity;
     private string color;
-    public string Color
-    {
-        get { return color; }
-    }
     private float[] rarityThreshold;
 
     private const string rarityError0 = "No Rarity Found";
@@ -24,29 +16,27 @@ public class RarityGenerator : MonoBehaviour
 
     void Start()
     {
+        rarityList = Resources.LoadAll<ItemRarity>("ItemRarities");
         rarityColorDictionary = new Dictionary<string, string>();
-        rarityColorDictionary.Add("Common", "#C8C8C8");  // White
-        rarityColorDictionary.Add("Uncommon", "#00FF00");  // Green
-        rarityColorDictionary.Add("Rare", "#0078FF");  // Blue
-        rarityColorDictionary.Add("Epic", "#B300FF");  // Purple
-        rarityColorDictionary.Add("Legendary", "#FFBD00");  // Gold
-        rarityColorDictionary.Add("Mythic", "#FF0000");  // Red
+        rarityColorDictionary.Add(rarityList[0].RarityName, rarityList[0].RarityColor);  // White
+        rarityColorDictionary.Add(rarityList[1].RarityName, rarityList[1].RarityColor);  // Green
+        rarityColorDictionary.Add(rarityList[2].RarityName, rarityList[2].RarityColor);  // Blue
+        rarityColorDictionary.Add(rarityList[3].RarityName, rarityList[3].RarityColor);  // Purple
+        rarityColorDictionary.Add(rarityList[4].RarityName, rarityList[4].RarityColor);  // Gold
+        rarityColorDictionary.Add(rarityList[5].RarityName, rarityList[5].RarityColor);  // Red
 
-        rarityThreshold = new float[]{ 0.55f, 0.27f, 0.11f, 0.05f, 0.014f, 0.006f };
+        rarityThreshold = new float[]{ rarityList[0].RarityWeight, rarityList[1].RarityWeight,
+                                       rarityList[2].RarityWeight, rarityList[3].RarityWeight,
+                                       rarityList[4].RarityWeight, rarityList[5].RarityWeight };
     }
 
-    public string GetRarity()
+    public ItemRarity GenerateRarity()
     {
-        return GenerateRarity();
-    }
-
-    string GenerateRarity()
-    {
-        if (rarityList.Count > 0)
+        if (rarityList.Length > 0)
         {
             int index = GetRarityIndex();
             rarity = rarityList[index];
-            color = GetHexColor(rarity);
+            color = GetHexColor(rarity.RarityName);
             return rarity;
         }
         else

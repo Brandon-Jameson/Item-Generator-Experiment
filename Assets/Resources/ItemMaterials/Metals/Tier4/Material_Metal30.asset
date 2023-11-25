@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e43e8a04fc67f464ab153c79e930eeaa, type: 3}
-  m_Name: AxeWeapon
+  m_Script: {fileID: 11500000, guid: 78c38a07ca0f72f47aa4ba3f3cf504fd, type: 3}
+  m_Name: Material_Metal30
   m_EditorClassIdentifier: 
-  itemTypeName: Axe
-  itemClass: Weapon
-  baseMaterialCost: 4
+  materialName: Maleverium
+  materialDamage: 62
+  materialArmour: 28
+  materialWeight: 2
+  materialValue: 48

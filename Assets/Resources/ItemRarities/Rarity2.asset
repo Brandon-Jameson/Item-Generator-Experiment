@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c38a07ca0f72f47aa4ba3f3cf504fd, type: 3}
-  m_Name: MaleveriumMaterial
+  m_Script: {fileID: 11500000, guid: fd5560c4c7cb33844beec6e001174a30, type: 3}
+  m_Name: Rarity2
   m_EditorClassIdentifier: 
-  materialName: Maleverium
-  materialDamage: 60
-  materialValue: 60
+  rarityName: Rare
+  rarityWeight: 0.11
+  rarityModifier: 2
+  rarityColor: '#0078FF'

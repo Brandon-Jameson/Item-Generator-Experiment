@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: LegArmour
   m_EditorClassIdentifier: 
   itemTypeName: Greaves
+  itemClass: Armour
   itemTypeWeight: 8
   itemTypeValue: 200
   baseMaterialCost: 4

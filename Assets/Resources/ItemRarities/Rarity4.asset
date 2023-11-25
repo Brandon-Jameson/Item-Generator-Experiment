@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e43e8a04fc67f464ab153c79e930eeaa, type: 3}
-  m_Name: AxeWeapon
+  m_Script: {fileID: 11500000, guid: fd5560c4c7cb33844beec6e001174a30, type: 3}
+  m_Name: Rarity4
   m_EditorClassIdentifier: 
-  itemTypeName: Axe
-  itemClass: Weapon
-  baseMaterialCost: 4
+  rarityName: Legendary
+  rarityWeight: 0.014
+  rarityModifier: 4
+  rarityColor: '#FFBD00'

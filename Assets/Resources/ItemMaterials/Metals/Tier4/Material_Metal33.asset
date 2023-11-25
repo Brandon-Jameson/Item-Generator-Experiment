@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78c38a07ca0f72f47aa4ba3f3cf504fd, type: 3}
-  m_Name: ValeriumMaterial
+  m_Name: Material_Metal33
   m_EditorClassIdentifier: 
-  materialName: Valerium
-  materialDamage: 40
-  materialValue: 40
+  materialName: Starfallen
+  materialDamage: 62
+  materialArmour: 28
+  materialWeight: 2
+  materialValue: 48

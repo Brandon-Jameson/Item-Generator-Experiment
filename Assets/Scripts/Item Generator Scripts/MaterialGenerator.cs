@@ -26,12 +26,7 @@ public class MaterialGenerator : MonoBehaviour
         materialList = Resources.LoadAll<ItemMaterial>("ItemMaterials/Metals");
     }
 
-    public ItemMaterial GetMaterial()
-    {
-        return GenerateMaterial();
-    }
-
-    ItemMaterial GenerateMaterial()
+    public ItemMaterial GenerateMaterial()
     {
         if (materialList.Length > 0)
         {

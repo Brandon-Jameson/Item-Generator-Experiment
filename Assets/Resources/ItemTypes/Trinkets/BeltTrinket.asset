@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BeltTrinket
   m_EditorClassIdentifier: 
   itemTypeName: Belt
+  itemClass: Trinket
   itemTypeWeight: 0.8
-  itemTypeValue: 40
-  itemTypeProtection: 0
-  itemTypeDamage: 0
+  itemTypeValue: 0
+  baseMaterialCost: 0

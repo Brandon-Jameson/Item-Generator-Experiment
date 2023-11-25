@@ -18,7 +18,16 @@ public class ItemGenerator : MonoBehaviour
         get { return material; }
         set { material = value; }
     }
+    private ItemRarity rarity;
+    public ItemRarity Rarity
+    {
+        get { return rarity; }
+    }
     private ItemType itemType;
+    public ItemType ItemType
+    {
+        get { return itemType; }
+    }
     private UIManager UI;
     private string itemOutput;
 
@@ -34,17 +43,42 @@ public class ItemGenerator : MonoBehaviour
     {
         UI.AddItemToLog(itemOutput);
         AssignVariables();
-        UI.SetTextColor(rarGen.Color, UI.ItemText);
+        UI.SetTextColor(rarity.RarityColor, UI.ItemText);
         itemOutput = String.Format($"{rarityStr} {materialStr} {itemTypeStr}");
         UI.UpdateText(itemOutput);
     }
 
     void AssignVariables()
     {
-        material = matGen.GetMaterial();
-        itemType = itmTypGen.GetItemType(material);
-        materialStr = matGen.Material.MaterialName;
-        itemTypeStr = itmTypGen.Item.ItemTypeName;
-        rarityStr = rarGen.GetRarity();        
+        material = matGen.GenerateMaterial();
+        itemType = itmTypGen.GenerateItemType(material);
+        rarity = rarGen.GenerateRarity();
+        materialStr = material.MaterialName;
+        itemTypeStr = itemType.ItemTypeName;
+        rarityStr = rarity.RarityName;
+        itemType.RarityModifier = itemType.UpdateRarityModifier(rarity);
+        UpdateItemValues();
+    }
+
+    void UpdateItemValues()
+    {
+        switch (itemType.ItemClass)
+        {
+            case "Weapon":
+                itemType.ItemTypeDamage = itemType.CalculateTotalDamage();
+                itemType.ItemTypeValue = itemType.CalculateValue();
+                itemType.ItemTypeWeight = itemType.CalculateWeight();
+            break;
+            case "Trinket":
+                itemType.ItemTypeValue = itemType.CalculateValue();
+                itemType.ItemTypeWeight = itemType.CalculateWeight();
+            break;
+            case "Armour":
+                itemType.ItemTypeArmour = itemType.CalculateArmour();
+                itemType.ItemTypeValue = itemType.CalculateValue();
+                itemType.ItemTypeWeight = itemType.CalculateWeight();
+            break;
+        }
+        
     }
 }

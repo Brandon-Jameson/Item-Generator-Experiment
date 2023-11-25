@@ -11,14 +11,12 @@ public class ItemTypeGenerator : MonoBehaviour
     {
         get { return item; }
     }
-    private ItemGenerator itemGenerator;
 
     private const string itemTypeError0 = "No ItemTypeFound";
     private const string itemTypeError1 = "ItemType is null!";
 
     void Start()
     {
-        itemGenerator = GetComponent<ItemGenerator>();
         InstanceItemTypes();
     }
 
@@ -27,24 +25,15 @@ public class ItemTypeGenerator : MonoBehaviour
         itemTypeList = Resources.LoadAll<ItemType>("ItemTypes");
     }
 
-    public ItemType GetItemType(ItemMaterial material)
-    {
-       return GenerateItemType(material);
-    }
-
-    ItemType GenerateItemType(ItemMaterial material)
+    public ItemType GenerateItemType(ItemMaterial material)
     {
         if (itemTypeList.Length > 0)
         {
             int index = UnityEngine.Random.Range(0, itemTypeList.Length);
             item = itemTypeList[index];
-
             if (item != null)
             {
                 item.BaseMaterial = material;
-                UpdateItemValues();
-                Debug.Log("Damage: " + item.ItemTypeDamage + "\n" + 
-                          "Value: " + item.ItemTypeValue);
                 return item;
             }
             else
@@ -55,14 +44,8 @@ public class ItemTypeGenerator : MonoBehaviour
         }
         else
         {
-            Debug.LogError(String.Format("{0}", itemTypeError0));
+            Debug.LogError(String.Format($"{itemTypeError0}"));
             return null;
         }
-    }
-
-    void UpdateItemValues()
-    {
-        item.ItemTypeDamage = item.CalculateTotalDamage();
-        item.ItemTypeValue = item.CalculateValue();
     }
 }

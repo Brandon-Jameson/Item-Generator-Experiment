@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HammerWeapon
   m_EditorClassIdentifier: 
   itemTypeName: Hammer
+  itemClass: Weapon
   itemTypeWeight: 10
-  itemTypeValue: 160
+  itemTypeValue: 80
   baseMaterialCost: 4

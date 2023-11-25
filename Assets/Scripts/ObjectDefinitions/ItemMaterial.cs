@@ -14,12 +14,20 @@ public class ItemMaterial : ScriptableObject
     public virtual int MaterialDamage
     {
         get { return materialDamage; }
-        set { materialDamage = value; }
+    }
+    [SerializeField] private int materialArmour;
+    public virtual int MaterialArmour
+    {
+        get { return materialArmour; }
+    }
+    [SerializeField] private float materialWeight;
+    public float MaterialWeight
+    {
+        get { return materialWeight; }
     }
     [SerializeField] private float materialValue;
     public virtual float MaterialValue
     {
         get { return materialValue; }
-        set { materialValue = value; }
     }
 }

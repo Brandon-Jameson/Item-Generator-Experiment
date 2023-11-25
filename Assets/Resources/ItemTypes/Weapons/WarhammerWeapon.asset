@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WarhammerWeapon
   m_EditorClassIdentifier: 
   itemTypeName: Warhammer
+  itemClass: Weapon
   itemTypeWeight: 20
-  itemTypeValue: 0
+  itemTypeValue: 180
   baseMaterialCost: 6
