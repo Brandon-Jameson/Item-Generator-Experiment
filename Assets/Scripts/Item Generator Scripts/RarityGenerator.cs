@@ -7,6 +7,10 @@ public class RarityGenerator : MonoBehaviour
 {
     private Dictionary<string, string> rarityColorDictionary;
     private ItemRarity[] rarityList;
+    public ItemRarity[] RarityList
+    {
+        get { return rarityList; }
+    }
     private ItemRarity rarity;
     private string color;
     private float[] rarityThreshold;

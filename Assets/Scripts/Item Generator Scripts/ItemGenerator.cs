@@ -79,6 +79,27 @@ public class ItemGenerator : MonoBehaviour
                 itemType.ItemTypeWeight = itemType.CalculateWeight();
             break;
         }
-        
+    }
+
+    public void GenerateCustomItem()
+    {
+        UI.AddItemToLog(itemOutput);
+        AssignCustomVariables();
+        UI.SetTextColor(rarity.RarityColor, UI.ItemText);
+        itemOutput = String.Format($"{rarityStr} {materialStr} {itemTypeStr}");
+        UI.UpdateText(itemOutput);
+    }
+
+    void AssignCustomVariables()
+    {
+        material = UI.SelectedMaterial;
+        itemType = UI.SelectedItemType;
+        itemType.BaseMaterial = material;
+        rarity = UI.SelectedRarity;
+        materialStr = material.MaterialName;
+        itemTypeStr = itemType.ItemTypeName;
+        rarityStr = rarity.RarityName;
+        itemType.RarityModifier = itemType.UpdateRarityModifier(rarity);
+        UpdateItemValues();
     }
 }

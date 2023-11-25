@@ -6,6 +6,10 @@ using UnityEngine;
 public class MaterialGenerator : MonoBehaviour
 {
     private ItemMaterial[] materialList;
+    public ItemMaterial[] MaterialList
+    {
+        get { return materialList; }
+    }
     private float[] materialWeight;
     private ItemMaterial material;
     public ItemMaterial Material

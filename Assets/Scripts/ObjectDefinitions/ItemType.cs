@@ -51,7 +51,6 @@ public class ItemType : ScriptableObject
         get { return baseMaterial; }
         set { baseMaterial = value; }
     }
-    // Must be initialized, otherwise first item isn't correctly generated.
     private float rarityModifier = 1; 
     public float RarityModifier
     {

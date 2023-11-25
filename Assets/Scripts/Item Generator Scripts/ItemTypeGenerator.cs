@@ -6,6 +6,10 @@ using UnityEngine;
 public class ItemTypeGenerator : MonoBehaviour
 {
     private ItemType[] itemTypeList;
+    public ItemType[] ItemTypeList
+    {
+        get { return itemTypeList; }
+    }
     private ItemType item;
     public ItemType Item
     {
