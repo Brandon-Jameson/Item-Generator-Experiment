@@ -14,46 +14,6 @@ Comprised of Materials, Rarities, and ItemTypes, I am hoping to build a scalable
 ## Materials
 ### Metals
 Metals are Materials that, while heavy, offer extremely supreme protection, and are the only Material strong enough to endure as weaponry. Simple in purpose, they lack any real benefits, other than specializing in damage and armour
-#### Copper:
-  *   DamageRange: (453-1812)
-  *   Protection: 1
-  *   Weight: 0.8
-  *   Value: 0.7
-#### Iron:
-  *   DamageRange: (453-2718)
-  *   Protection: 2
-  *   Weight: 1.3
-  *   Value: 1
-#### Steel:
-  *   DamageRange: (906-3171)
-  *   Protection: 3
-  *   Weight: 1.2
-  *   Value: 1.1
-#### Gold:
-  *   DamageRange: (906-4077)
-  *   Protection: 4
-  *   Weight: 2
-  *   Value: 2
-#### High Alloy:
-  *   DamageRange: (906-4983)
-  *   Protection: 6
-  *   Weight: 0.9
-  *   Value: 3
-#### Valerium:
-  *   DamageRange: (1359-5436)
-  *   Protection: 14
-  *   Weight: 1.4
-  *   Value: 2.4
-#### Pharium:
-  *   DamageRange: (1359-6342)
-  *   Protection: 8
-  *   Weight: 0.3
-  *   Value: 3
-#### Maleverium:
-  *   DamageRange: (1812-6795)
-  *   Protection: 10
-  *   Weight: 0.8
-  *   Value: 5
 
 ### Textiles
 Textiles are Materials that act as "augmentors". They provide bonuses, mainly to resistances, stats, and apply other modifiers.
