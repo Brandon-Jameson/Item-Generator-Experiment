@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,7 +33,7 @@ public class MaterialGenerator : MonoBehaviour
     {
         if (materialList.Length > 0)
         {
-            int index = UnityEngine.Random.Range(0, materialList.Length);
+            int index = Random.Range(0, materialList.Length);
             material = materialList[index];
             if (material != null)
             {
@@ -42,13 +41,13 @@ public class MaterialGenerator : MonoBehaviour
             }
             else
             {
-                Debug.LogError(String.Format($"{materialError1}"));
+                Debug.LogError($"{materialError1}");
                 return null;
             }
         }
         else
         {
-            Debug.LogError(String.Format($"{materialError0}"));
+            Debug.LogError($"{materialError0}");
             return null;
         }
     }

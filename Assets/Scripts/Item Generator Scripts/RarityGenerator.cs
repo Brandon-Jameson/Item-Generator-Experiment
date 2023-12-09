@@ -45,7 +45,7 @@ public class RarityGenerator : MonoBehaviour
         }
         else
         {
-            Debug.LogError(String.Format($"{rarityError0}"));
+            Debug.LogError($"{rarityError0}");
             return null;
         }
     }

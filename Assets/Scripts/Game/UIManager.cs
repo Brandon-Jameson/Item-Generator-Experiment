@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -98,9 +97,9 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         itemGen = GameObject.Find("Item Generator").GetComponent<ItemGenerator>();
-        itemTypeGen = GameObject.Find("Item Generator").GetComponent<ItemTypeGenerator>();
-        matGen = GameObject.Find("Item Generator").GetComponent<MaterialGenerator>();
-        rarGen = GameObject.Find("Item Generator").GetComponent<RarityGenerator>();
+        itemTypeGen = itemGen.GetComponent<ItemTypeGenerator>();
+        matGen = itemGen.GetComponent<MaterialGenerator>();
+        rarGen = itemGen.GetComponent<RarityGenerator>();
         itemText = GetComponentInChildren<TMP_Text>();
         logPanel = GameObject.Find("LogPanel");
         log1 = GameObject.Find("Log1").GetComponent<TMP_Text>();
@@ -116,11 +115,11 @@ public class UIManager : MonoBehaviour
         itemTypeDropdown = GameObject.Find("ItemTypeDropdown").GetComponent<TMP_Dropdown>();
         rarityDropdown = GameObject.Find("RarityDropdown").GetComponent<TMP_Dropdown>();
         logBuffer = new TMP_Text[]{ log1, log2, log3, log4, log5 };
-        itemText.text = String.Format("{0}", uiError0);
-        damageText.text = String.Format($"{damageStart}");
-        armourText.text = String.Format($"{armourStart}");
-        weightText.text = String.Format($"{weightStart}");
-        valueText.text = String.Format($"{valueStart}");
+        itemText.text = $"{uiError0}";
+        damageText.text = $"{damageStart}";
+        armourText.text = $"{armourStart}";
+        weightText.text = $"{weightStart}";
+        valueText.text = $"{valueStart}";
         PopulateDropdowns();
     }
 
@@ -156,17 +155,17 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError(String.Format($"{uiError1} {hexColor}"));
+            Debug.LogError($"{uiError1} {hexColor}");
         }
     }
 
     public void UpdateText(string itemOutput)
     {
         itemText.text = itemOutput;
-        damageText.text = String.Format($"Damage = {itemGen.ItemType.ItemTypeDamage}");
-        armourText.text = String.Format($"Armour = {itemGen.ItemType.ItemTypeArmour}");
-        weightText.text = String.Format($"Weight = {itemGen.ItemType.ItemTypeWeight}");
-        valueText.text = String.Format($"Value = {itemGen.ItemType.ItemTypeValue}");
+        damageText.text = $"Damage = {itemGen.ItemType.ItemTypeDamage}";
+        armourText.text = $"Armour = {itemGen.ItemType.ItemTypeArmour}";
+        weightText.text = $"Weight = {itemGen.ItemType.ItemTypeWeight}";
+        valueText.text = $"Value = {itemGen.ItemType.ItemTypeValue}";
     }
 
     public void AddItemToLog(string itemOutput)

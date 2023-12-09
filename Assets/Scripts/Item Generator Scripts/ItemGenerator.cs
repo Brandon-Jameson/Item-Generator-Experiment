@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,7 +43,7 @@ public class ItemGenerator : MonoBehaviour
         UI.AddItemToLog(itemOutput);
         AssignVariables();
         UI.SetTextColor(rarity.RarityColor, UI.ItemText);
-        itemOutput = String.Format($"{rarityStr} {materialStr} {itemTypeStr}");
+        itemOutput = $"{rarityStr} {materialStr} {itemTypeStr}";
         UI.UpdateText(itemOutput);
     }
 
@@ -62,21 +61,17 @@ public class ItemGenerator : MonoBehaviour
 
     void UpdateItemValues()
     {
+        itemType.ItemTypeValue = itemType.CalculateValue();
+        itemType.ItemTypeWeight = itemType.CalculateWeight();
         switch (itemType.ItemClass)
         {
             case "Weapon":
                 itemType.ItemTypeDamage = itemType.CalculateTotalDamage();
-                itemType.ItemTypeValue = itemType.CalculateValue();
-                itemType.ItemTypeWeight = itemType.CalculateWeight();
             break;
             case "Trinket":
-                itemType.ItemTypeValue = itemType.CalculateValue();
-                itemType.ItemTypeWeight = itemType.CalculateWeight();
             break;
             case "Armour":
                 itemType.ItemTypeArmour = itemType.CalculateArmour();
-                itemType.ItemTypeValue = itemType.CalculateValue();
-                itemType.ItemTypeWeight = itemType.CalculateWeight();
             break;
         }
     }
@@ -86,7 +81,7 @@ public class ItemGenerator : MonoBehaviour
         UI.AddItemToLog(itemOutput);
         AssignCustomVariables();
         UI.SetTextColor(rarity.RarityColor, UI.ItemText);
-        itemOutput = String.Format($"{rarityStr} {materialStr} {itemTypeStr}");
+        itemOutput = $"{rarityStr} {materialStr} {itemTypeStr}";
         UI.UpdateText(itemOutput);
     }
 

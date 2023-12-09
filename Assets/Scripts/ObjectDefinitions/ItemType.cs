@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -68,7 +67,7 @@ public class ItemType : ScriptableObject
         }
         else
         {
-            Debug.LogError(String.Format($"{itemTypeError0}"));
+            Debug.LogError($"{itemTypeError0}");
             return 0;
         }
     }
@@ -81,7 +80,7 @@ public class ItemType : ScriptableObject
         }
         else 
         {
-            Debug.LogError(String.Format($"{itemTypeError0}"));
+            Debug.LogError($"{itemTypeError0}");
             return 0;
         }
     }
@@ -94,7 +93,7 @@ public class ItemType : ScriptableObject
         }
         else
         {
-            Debug.LogError(String.Format($"{itemTypeError0}"));
+            Debug.LogError($"{itemTypeError0}");
             return 0f;
         }
     }
@@ -111,7 +110,7 @@ public class ItemType : ScriptableObject
         }
         else
         {
-            Debug.LogError(String.Format($"{itemTypeError0}"));
+            Debug.LogError($"{itemTypeError0}");
             return 0f;
         }
     }
